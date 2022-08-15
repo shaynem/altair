@@ -38,6 +38,7 @@ const fastifyAltairPlugin: FastifyPluginCallback<AltairFastifyPluginOptions> = (
   fastify.register(fastifyStatic, {
     root: getDistDirectory(),
     prefix: baseURL,
+    decorateReply: false
   });
 
   const altairPage = renderAltair({ baseURL, endpointURL, ...renderOptions });
